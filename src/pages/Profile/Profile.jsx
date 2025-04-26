@@ -1,13 +1,14 @@
 import {useLayoutEffect, useState} from "react";
 import axios  from "axios";
-import { Link } from 'react-router-dom';
-
+import {Link, Navigate} from 'react-router-dom';
+import RepositoriesList from "../../components/RepositoriesList/RepositoriesList.jsx";
+export  const token = localStorage.getItem('token');
 const Profile = () => {
     const [user, setUser] = useState(null);
-    const [repositories, setRepositories] = useState([]);
+
     // const [tab, setTap] = useState("public");
 
-    const token = localStorage.getItem('token');
+
 
     useLayoutEffect(() => {
         if (token) {
@@ -23,21 +24,14 @@ const Profile = () => {
                     console.error(error);
                 });
 
-            axios.get('https://api.github.com/user/repos', {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            })
-                .then(response => {
-                    setRepositories(response.data);
-                })
-                .catch(error => {
-                    console.error(error);
-                });
+
         }
     }, [token]);
 
 
+    if (!token) {
+        return <Navigate to='/'/>
+    }
     if (!user) {
         return <h1>Загрузка профиля...</h1>
     }
@@ -85,55 +79,7 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-            <main className="main">
-                <section className="repositories">
-                    <h1 className="repositories__title">Ваши Репозитории</h1>
-                    <div className="container">
 
-
-                        <div className="repositories__block">
-                            <div className="repositories__type-box">
-                                <button className="repositories__btn">
-                                    Все
-                                </button>
-                                <button className="repositories__btn">
-                                    Открытый достутые
-                                </button>
-                                <button className="repositories__btn">
-                                    Закрытый доступ
-                                </button>
-                            </div>
-                            <div className="repositories__list">
-                                {
-                                    repositories.map((repos) => (
-                                        <div className="repositories__list-item" key={repos}>
-                                            <div className="repositories__left">
-                                                <h1 className='repositories__name'>Название репозитории: <span>{repos.name}.</span></h1>
-                                            <h2 className="repositories__information">Доступ: <span style={{color: repos.private ? "red": "green"}}>
-                                                    {repos.private ? "Закрытый" : "Открытый"}
-                                                </span>
-                                            </h2>
-                                            <h3 className="repositories__description">
-                                                Описание: <span>{repos.description ? repos.description : 'Нет описание'}</span>
-                                            </h3>
-                                            </div>
-                                            <div className="repositories__right">
-                                                <h2 className="repositories__owner">
-                                                    Владелец: <span>{repos.owner.login}.</span> <br/>
-                                                    <a href={repos.owner.url}>Ссылка на владельца</a>
-                                                </h2>
-                                                <Link className='repositories__link' to={repos.html_url}>Ссылка на репозиторию</Link>
-                                            </div>
-
-                                        </div>
-                                    ))
-                                }
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
         </>
 
     );

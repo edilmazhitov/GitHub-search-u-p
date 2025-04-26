@@ -1,0 +1,33 @@
+.header {
+  background-color: #0d1117;
+
+  &__block {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 10px 0;
+
+  }
+
+  &__title {
+    color: white;
+  }
+
+  &__list {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    column-gap: 50px
+  }
+
+  &__log-out {
+    color: white;
+    text-align: center;
+
+    .icon {
+      width: 20px;
+    }
+  }
+
+
+}

@@ -1,5 +1,8 @@
 @use "./pages/Profile";
 
+@use "./components/RepositoriesList";
+@use "./components/Header";
+
 * {
   padding: 0;
   margin: 0;
