@@ -1,14 +1,24 @@
-.repositories-list {
+.repositories {
+  &-list {
 
-  &__item {
-    width: 800px;
-    height: 130px;
-    border: 3px solid #08c5fd;
-    padding: 0 10px;
-    margin: 10px 200px 0;
+    &__item {
+      width: 800px;
+      height: 130px;
+      border: 3px solid #08c5fd;
+      padding: 0 10px;
+      margin: 10px 200px 0;
 
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  &__name {
+
+    span {
+      font-size: 20px;
+    }
   }
 }
+

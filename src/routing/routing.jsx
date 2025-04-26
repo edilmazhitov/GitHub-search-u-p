@@ -4,7 +4,7 @@ import Login from "../pages/Login/Login";
 import Profile from "../pages/Profile/Profile";
 import Callback from "../pages/Callback/Callback";
 import Repositories from "../pages/Repositories/Repositories";
-import Layout from "../Layout/Layout.jsx";
+import Layout from "../Layout/Layout";
 const router = createBrowserRouter([
     {
         path: '/',
