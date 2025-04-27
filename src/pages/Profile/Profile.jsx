@@ -59,7 +59,7 @@ const Profile = () => {
                                 <span>{user.location === null ? 'Место положение не указано' : user.location}</span>
                             </h2>
                             <div className="profile__line"></div>
-                            <h2 className="profile__bio title">Описани профиля: <span>{user.bio === null ? 'Описание нету' : user.bio}</span>
+                            <h2 className="profile__bio title">Описание профиля: <span>{user.bio === null ? 'Описание нету' : user.bio}</span>
                             </h2>
                             <Link className="profile__link" to={user.html_url}>
                                 Ссылка на профиль в GitHub

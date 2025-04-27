@@ -8,14 +8,22 @@ const Login = () => {
         window.location.href = `https://github.com/login/oauth/authorize?client_id=${client_id}&redirect_uri=http://localhost:5173/callback&scope=user,repo`;
     }
 
-    if (token) {
-        return <Navigate to='/profile'/>
+    if (token === true) {
+        return <Navigate to='/profile' />
     }
 
     return (
-        <div>
-            <h1>LOGIN PAGE</h1>
-            <button onClick={handleLogin}>Войти с помощью GitHub</button>
+        <div className='login'>
+            <div className="container">
+                <div className="login__block">
+                    <h1 className="login__title">Авторизация</h1>
+                    <p className="login__subtitle">
+                        Войдите аккаунт через GitHub. <br/>
+                        Чтобы смотреть репозитории.
+                    </p>
+                    <button className="login__btn" onClick={handleLogin}>Войти с помощью GitHub</button>
+                </div>
+            </div>
         </div>
     );
 };
