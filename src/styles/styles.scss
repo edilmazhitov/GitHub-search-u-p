@@ -1,8 +1,10 @@
 @use "./pages/Profile";
 @use "./pages/Login";
+@use "./pages/Home";
 
 @use "./components/RepositoriesList";
 @use "./components/Header";
+@use "./components/UserInterface";
 
 * {
   padding: 0;

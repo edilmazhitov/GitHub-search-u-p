@@ -23,11 +23,11 @@ const Header = () => {
                             </li>
                         </ul>
                     </nav>
-                    <Link className="header__log-out" to={token === true ? "/profile" : '/login'}>
+                    <Link className="header__log-out" to={token === false ? '/login': '/profile'}>
                         <FaGithub className='icon'/> <br/>
                         <span>
                         {
-                            token === true ? "Профиль" : "Войти"
+                            token === false ? "Войти" : "Профиль"
                         }
                         </span>
                     </Link>
