@@ -1,0 +1,14 @@
+.repositories-page {
+
+  &__title {
+    font-size: 48px;
+    padding: 10px 0;
+    background-color: #08c5fd;
+    text-align: center;
+    color: white;
+
+    span {
+      color: green;
+    }
+  }
+}

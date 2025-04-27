@@ -18,7 +18,6 @@ const UserInterface = ({userData}) => {
                             <a href={userData.html_url} target="_blank" rel="noreferrer" className="user-interface__go-to-github">Перейти в профиль <br/> на GitHub'e</a> <br/>
                             <Link  to={`/user-repositories/${userData.login}`} className="user-interface__go-to-github">Простмотрет репозитории</Link>
                         </div>
-
                     </div>
                 </div>
             )}

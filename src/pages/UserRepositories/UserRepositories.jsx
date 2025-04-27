@@ -25,7 +25,7 @@ const UserRepositories = () => {
 
     return (
         <div className="repositories-page">
-            <h1>Репозитории пользователя: {username}</h1>
+            <h1 className='repositories-page__title'>Репозитории пользователя: <span>{username}</span></h1>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <RepositoriesList repositories={repositories} />
         </div>

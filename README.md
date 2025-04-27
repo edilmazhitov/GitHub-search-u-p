@@ -32,4 +32,17 @@
 
 ##  Даты разработки:
 - **Начало:** 25.04.2025 г.
-- **Завершение:** xx.xx.xxxx г.
+- **Завершение:** 27.04.2025 г.
+
+## Инструкция по запуску приложения:
+1. Создать папку названия любое.
+2. Открыть созданную папку на терминале.
+3. Написать команду на терминале: git clone https://github.com/edilmazhitov/GitHub-search-u-p.git 
+или git@github.com:edilmazhitov/GitHub-search-u-p.git. - создается папка под названием **GitHub-search-u-p**.
+4. Перейти эту папку через cd GitHub-search-u-p.
+5. Скачать зависимости через npm install или yarn install.
+6. После скачивание всех зависимостей написатьь команду npm run dev или yarn dev.
+7. Перейти по ссылке на сайт.
+
+Если авторизация на сайт не происходит перейти на сайт этот сайт: http://cors-anywhere.herokuapp.com/corsdemo 
+и нажать на кнопку Request template access to the demo server. И обратно вернутся на сайт и пройти авторизацию через GitHub.

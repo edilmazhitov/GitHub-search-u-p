@@ -6,7 +6,6 @@ const Profile = () => {
     const [user, setUser] = useState(null);
 
 
-
     useLayoutEffect(() => {
         if (token) {
             axios.get('https://api.github.com/user', {
