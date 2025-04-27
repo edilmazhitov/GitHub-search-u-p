@@ -5,6 +5,7 @@ import Profile from "../pages/Profile/Profile";
 import Callback from "../pages/Callback/Callback";
 import Repositories from "../pages/Repositories/Repositories";
 import Layout from "../Layout/Layout";
+import UserRepositories from "../pages/UserRepositories/UserRepositories";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: '/repositories',
                 element: <Repositories />
+            },
+            {
+                path: '/user-repositories/:username',
+                element: <UserRepositories />
             }
         ]
     }

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const UserInterface = ({userData}) => {
     return (
         <>
@@ -13,7 +15,8 @@ const UserInterface = ({userData}) => {
                         <div className="user-interface__left">
                             <p className="user-interface__followers">Подписчиков: <span>{userData.followers}</span></p>
                             <p className="user-interface__repositories">Репозитории: <span>{userData.public_repos}</span></p>
-                            <a href={userData.html_url} target="_blank" rel="noreferrer" className="user-interface__go-to-github">Перейти в профиль <br/> на GitHub'e</a>
+                            <a href={userData.html_url} target="_blank" rel="noreferrer" className="user-interface__go-to-github">Перейти в профиль <br/> на GitHub'e</a> <br/>
+                            <Link  to={`/user-repositories/${userData.login}`} className="user-interface__go-to-github">Простмотрет репозитории</Link>
                         </div>
 
                     </div>
