@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa6";
-import token from '../../pages/Profile/Profile';
 
 const Header = () => {
+
+
+    const token = localStorage.getItem('token');
     return (
         <header className='header'>
             <div className="container">
@@ -21,9 +23,13 @@ const Header = () => {
                             </li>
                         </ul>
                     </nav>
-                    <Link className="header__log-out" to={token === false ? '/login': '/profile'}>
+                    {/*<Link className="header__log-out" to={token ? '/profile': '/login'}>*/}
+                    {/*    <FaGithub className='icon'/> <br/>*/}
+                    {/*    <span>{token ? "Войти" : "Профиль"}</span>*/}
+                    {/*</Link>*/}
+                    <Link className="header__log-out" to={token ? '/profile': '/login'}>
                         <FaGithub className='icon'/> <br/>
-                        <span>{token === false ? "Войти" : "Профиль"}</span>
+                        <span>{token ? "Профиль" : "Войти"}</span>
                     </Link>
                 </div>
             </div>

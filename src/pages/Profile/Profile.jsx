@@ -1,7 +1,7 @@
 import {useLayoutEffect, useState} from "react";
 import axios  from "axios";
 import {Link, Navigate} from 'react-router-dom';
-export  const token = localStorage.getItem('token');
+export const token = localStorage.getItem('token');
 const Profile = () => {
     const [user, setUser] = useState(null);
 
